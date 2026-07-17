@@ -1,17 +1,36 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import Button from "../components/Button";
 import toast from "react-hot-toast";
+import api from "../config/axios";
+import { useDispatch } from "react-redux";
+import { setUser } from "../redux/slices/userSlice";
 
 const Login = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    if(!email || !password){
-    return toast.error("All fields are required!")
+    if (!email || !password) {
+      return toast.error("All fields are required!");
+    }
+    try {
+      const res = await api.post("/auth/login", {
+        email,
+        password,
+      });
+      dispatch(setUser(res.data.user));
+      toast.success(res.data.message);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      console.log(error.response);
+      console.log(error.response?.data);
+      toast.error(error.response?.data?.message || "Something went wrong");
     }
   };
 
@@ -30,15 +49,15 @@ const Login = () => {
         {/* input fields  */}
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
           <input
-          value={email}
-          onChange={(e)=>setEmail(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Enter your email"
             className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#A1A1AA] px-3"
           />
           <input
-           value={password}
-          onChange={(e)=>setPassword(e.target.value)}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Enter password"
             className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#A1A1AA] px-3"
@@ -53,11 +72,10 @@ const Login = () => {
               Sign up
             </Link>
           </p>
-          
-        {/* Login button  */}
-        <Button text="Login" />
-        </form>
 
+          {/* Login button  */}
+          <Button text="Login" />
+        </form>
       </div>
     </div>
   );
