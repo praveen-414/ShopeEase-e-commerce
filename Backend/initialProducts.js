@@ -8,26 +8,25 @@ dotenv.config();
 const initialProducts = async () => {
   try {
     await connectDB();
-    const [dummyRes, fakeStoreRes] = await Promise.all([
-      axios.get("https://dummyjson.com/products?limit=194"),
-      axios.get("https://fakestoreapi.com/products"),
-    ]);
+    const res = await axios.get("https://dummyjson.com/products?limit=194");
 
-    const dummyProducts = dummyRes.data.products.map((product) => ({
+    const dummyProducts = res.data.products.map((product) => ({
       productImage: product.thumbnail,
       title: product.title,
+      rating: product.rating,
       description: product.description,
       price: product.price,
+      stock: product.stock,
+      discountPercentage: product.discountPercentage,
+      tags:product.tags,
+      warrantyInformation:product.warrantyInformation,
+      shippingInformation:product.shippingInformation,
+      availabilityStatus:product.availabilityStatus,
+      returnPolicy:product.returnPolicy,
+      category:product.category,
     }));
 
-    const fakeStoreProducts = fakeStoreRes.data.map((product) => ({
-      productImage: product.image,
-      title: product.title,
-      description: product.description,
-      price: product.price,
-    }));
-
-    const allProducts = [...dummyProducts, ...fakeStoreProducts];
+    const allProducts = dummyProducts;
 
     await productModel.insertMany(allProducts);
     console.log("Products inserted successfully");

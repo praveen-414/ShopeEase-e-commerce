@@ -23,7 +23,7 @@ const Login = () => {
         email,
         password,
       });
-      dispatch(setUser(res.data.user));
+      dispatch(setUser(res.data));
       toast.success(res.data.message);
       navigate("/");
     } catch (error) {

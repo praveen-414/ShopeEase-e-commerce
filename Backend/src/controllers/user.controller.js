@@ -4,9 +4,8 @@ const getCurrentUser = async (req, res) => {
   const userId = req.userId;
   try {
     const user = await userModel
-      .findOne(userId)
-      .select("-password")
-      .select("-refreshToken");
+      .findById(userId)
+      .select("-password -refreshToken");
     console.log(user);
     if (!user) {
       return res.status(404).json({

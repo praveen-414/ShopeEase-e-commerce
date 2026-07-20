@@ -39,4 +39,7 @@ const getSingleProduct = async (req, res) => {
   }
 };
 
+
+
+
 export default { getAllProducts, getSingleProduct };
