@@ -9,6 +9,7 @@ import { setUser } from "../redux/slices/userSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ const Login = () => {
     if (!email || !password) {
       return toast.error("All fields are required!");
     }
+    setLoading(true)
     try {
       const res = await api.post("/auth/login", {
         email,
@@ -31,8 +33,11 @@ const Login = () => {
       console.log(error.response);
       console.log(error.response?.data);
       toast.error(error.response?.data?.message || "Something went wrong");
+    }finally{
+      setLoading(false)
     }
   };
+
 
   return (
     <div className="bg-[#F8FAFC] min-h-dvh flex justify-center md:items-center pt-24 px-4 relative overflow-y-auto">
@@ -74,7 +79,7 @@ const Login = () => {
           </p>
 
           {/* Login button  */}
-          <Button text="Login" />
+          <Button text={loading ? "Logging..." : "Login"} />
         </form>
       </div>
     </div>

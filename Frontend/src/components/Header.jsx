@@ -25,7 +25,7 @@ const Header = () => {
       product?.category.toLowerCase().includes(query)
     );
   });
-  console.log(filteredProducts);
+
   
   const [menuOpen, setMenuOpen] = useState(false);
   const { user } = useSelector((state) => state.user);

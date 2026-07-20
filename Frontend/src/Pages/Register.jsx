@@ -11,6 +11,7 @@ const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -23,12 +24,15 @@ const Register = () => {
     if (password != confirmPassword) {
       return toast.error("Password doen't match!");
     }
+    setLoading(true);
     try {
       const res = await api.post("/auth/register", {
         name,
         email,
         password,
       });
+      console.log(res.data);
+      
       dispatch(setUser(res.data));
       toast.success(res.data.message);
       navigate("/");
@@ -37,6 +41,8 @@ const Register = () => {
       console.log(error.response);
       console.log(error.response?.data);
       toast.error(error.response?.data?.message || "Something went wrong");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -93,7 +99,7 @@ const Register = () => {
 
           {/* signup button  */}
 
-          <Button text="Sign up" />
+          <Button text={loading ? "Signing..." : "Sign up"} />
         </form>
       </div>
     </div>

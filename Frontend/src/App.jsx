@@ -74,7 +74,6 @@ const App = () => {
   const getProducts = async () => {
     try {
       const res = await api.get("/products");
-      console.log(res.data.products);
 
       dispatch(setProducts(res.data.products));
     } catch (error) {

@@ -103,8 +103,8 @@ const Footer = () => {
             </h3>
 
             <ul className="mt-8 space-y-4">
-              {links.map((item) => (
-                <li key={item}>
+              {links.map((item, index) => (
+                <li key={index}>
                   <Link
                     to={item.path}
                     href="#"
