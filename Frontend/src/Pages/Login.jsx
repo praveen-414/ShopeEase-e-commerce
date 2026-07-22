@@ -44,7 +44,9 @@ const Login = () => {
   return (
     <div className="bg-[#F8FAFC] min-h-dvh flex justify-center items-center pt-24 px-4 relative overflow-y-auto">
       {/* logo  */}
-      <div className="absolute top-10 left-10">
+      <div 
+      onClick={()=>navigate("/")}
+      className="absolute top-10 left-10 cursor-pointer">
         <img src={logo} alt="" className="w-40" />
       </div>
       <div className="bg-[FFFFFF] w-full md:w-[60%] lg:w-[30%] h-fit border border-[#E5E7EB] rounded-lg shadow-md flex flex-col gap-7 p-8">
