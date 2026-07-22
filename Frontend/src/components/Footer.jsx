@@ -10,6 +10,7 @@ import {
   HiOutlineMapPin,
 } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+import Button from "./Button";
 
 const Footer = () => {
   const links = [
@@ -168,7 +169,7 @@ const Footer = () => {
             © {new Date().getFullYear()} ShopEase. All rights reserved.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm">
+          <div className="flex flex-wrap justify-center items-center gap-6 text-sm">
             <Link
               to="termsofservice"
               className="text-[#6B7280] hover:text-[#4F46E5] transition"
@@ -176,6 +177,11 @@ const Footer = () => {
               {" "}
               Terms of Service
             </Link>
+
+            <Button
+              text=" ^ Back to Top"
+              onclick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            />
           </div>
         </div>
       </div>
