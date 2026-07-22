@@ -25,7 +25,9 @@ const Login = () => {
         email,
         password,
       });
-      dispatch(setUser(res.data));
+      console.log(res.data.user);
+      
+      dispatch(setUser(res.data.user));
       toast.success(res.data.message);
       navigate("/");
     } catch (error) {

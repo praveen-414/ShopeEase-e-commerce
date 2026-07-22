@@ -43,6 +43,21 @@ const App = () => {
     }
   }, [theme]);
 
+  useEffect(() => {
+  const loadData = async () => {
+    try {
+      await Promise.all([
+        getCurrentUser(),
+        getProducts(),
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  loadData();
+}, []);
+
   const getCurrentUser = async () => {
     try {
       const res = await api.get("/user/get-user", {
@@ -52,9 +67,7 @@ const App = () => {
       dispatch(setUser(res.data));
     } catch (error) {
       dispatch(setUser(null));
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
 
   const getCartProducts = async () => {
@@ -66,9 +79,7 @@ const App = () => {
       dispatch(setCart(res.data.cart.items));
     } catch (error) {
       console.log(error);
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
 
   const getProducts = async () => {
@@ -78,9 +89,7 @@ const App = () => {
       dispatch(setProducts(res.data.products));
     } catch (error) {
       console.log(error);
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
   useEffect(() => {
     getCurrentUser();
@@ -92,6 +101,8 @@ const App = () => {
       getCartProducts();
     }
   }, [user]);
+
+  
 
   if (loading) {
     return (

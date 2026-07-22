@@ -144,6 +144,7 @@ const Header = () => {
             {/* Cart */}
             <Link
               to="/cart"
+              onclick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="relative flex items-center gap-1 p-2 rounded-md hover:bg-gray-100 transition cursor-pointer"
             >
               <CiShoppingCart size={24} />

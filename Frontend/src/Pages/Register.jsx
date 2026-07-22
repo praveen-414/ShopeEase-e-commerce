@@ -31,9 +31,9 @@ const Register = () => {
         email,
         password,
       });
-      console.log(res.data);
+
       
-      dispatch(setUser(res.data));
+      dispatch(setUser(res.data.user));
       toast.success(res.data.message);
       navigate("/");
     } catch (error) {
