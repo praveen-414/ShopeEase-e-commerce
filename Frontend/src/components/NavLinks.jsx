@@ -15,7 +15,11 @@ const NavLinks = () => {
       <div className="max-w-[90%] mx-auto overflow-x-auto scrollbar-hide">
         <ul className="flex gap-6 lg:gap-10 py-4 min-w-max">
           {navLinks.map((item) => (
-            <li key={item.path} className="whitespace-nowrap">
+            <li
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              key={item.path}
+              className="whitespace-nowrap"
+            >
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
