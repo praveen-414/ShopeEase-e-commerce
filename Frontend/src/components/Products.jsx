@@ -11,7 +11,7 @@ const Products = () => {
   return (
     <div className="w-full mt-10 mb-10">
       <div className="w-full max-w-[90%] mx-auto">
-        <h1 className="text-3xl font-semibold text-blue-600">
+        <h1 className="text-3xl font-bold text-blue-600">
           Explore Products
         </h1>
         <p className="text-[#6B7280]">Browse our latest collection</p>
