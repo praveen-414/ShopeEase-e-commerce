@@ -91,7 +91,7 @@ const AboutUs = () => {
               experience every time.
             </p>
 
-            <Link to="/shop">
+            <Link to="/">
               <Button text="Explore Products" className="py-3 mt-3" />
             </Link>
           </div>

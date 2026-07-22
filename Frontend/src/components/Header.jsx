@@ -16,17 +16,16 @@ import { setSearch } from "../redux/slices/searchSlice";
 const Header = () => {
   const { cart } = useSelector((state) => state.cart);
   const { search } = useSelector((state) => state.search);
-  const {products} = useSelector(state=>state.products)
+  const { products } = useSelector((state) => state.products);
 
   const filteredProducts = products.filter((product) => {
-      const query = search.toLowerCase();
+    const query = search.toLowerCase();
     return (
       product?.title.toLowerCase().includes(query) ||
       product?.category.toLowerCase().includes(query)
     );
   });
 
-  
   const [menuOpen, setMenuOpen] = useState(false);
   const { user } = useSelector((state) => state.user);
   const [open, setOpen] = useState(false);
@@ -76,70 +75,69 @@ const Header = () => {
             />
             <IoIosSearch size={22} className="text-gray-500" />
           </div>
-{search.trim() && (
-  <div className="absolute top-full left-0 mt-2 w-full bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 overflow-hidden">
-    {filteredProducts.length > 0 ? (
-      <>
-        <div className="max-h-96 overflow-y-auto">
-          {filteredProducts.slice(0, 6).map((product) => (
-            <Link
-              key={product._id}
-              to={`/product/${product._id}`}
-              onClick={() => dispatch(setSearch(""))}
-              className="flex items-center gap-4 px-4 py-3 hover:bg-indigo-50 transition-all duration-200 border-b last:border-none"
-            >
-              {/* Product Image */}
-              <div className="w-16 h-16 rounded-xl bg-gray-100 p-2 flex items-center justify-center">
-                <img
-                  src={product.productImage}
-                  alt={product.title}
-                  className="w-full h-full object-contain"
-                />
-              </div>
+          {search.trim() && (
+            <div className="absolute top-full left-0 mt-2 w-full bg-white rounded-2xl shadow-2xl border border-gray-100 z-50 overflow-hidden">
+              {filteredProducts.length > 0 ? (
+                <>
+                  <div className="max-h-96 overflow-y-auto">
+                    {filteredProducts.slice(0, 6).map((product) => (
+                      <Link
+                        key={product._id}
+                        to={`/product/${product._id}`}
+                        onClick={() => dispatch(setSearch(""))}
+                        className="flex items-center gap-4 px-4 py-3 hover:bg-indigo-50 transition-all duration-200 border-b last:border-none"
+                      >
+                        {/* Product Image */}
+                        <div className="w-16 h-16 rounded-xl bg-gray-100 p-2 flex items-center justify-center">
+                          <img
+                            src={product.productImage}
+                            alt={product.title}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
 
-              {/* Product Details */}
-              <div className="flex-1 overflow-hidden">
-                <h3 className="font-semibold text-gray-800 truncate">
-                  {product.title}
-                </h3>
+                        {/* Product Details */}
+                        <div className="flex-1 overflow-hidden">
+                          <h3 className="font-semibold text-gray-800 truncate">
+                            {product.title}
+                          </h3>
 
-                <p className="text-sm text-gray-500 capitalize">
-                  {product.category}
-                </p>
+                          <p className="text-sm text-gray-500 capitalize">
+                            {product.category}
+                          </p>
 
-                <div className="flex items-center gap-2 mt-1">
-                  <span className="text-lg font-bold text-indigo-600">
-                    ₹{product.price}
-                  </span>
+                          <div className="flex items-center gap-2 mt-1">
+                            <span className="text-lg font-bold text-indigo-600">
+                              ${product.price}
+                            </span>
 
-                  {product.oldPrice && (
-                    <span className="text-sm text-gray-400 line-through">
-                      ₹{product.oldPrice}
-                    </span>
-                  )}
+                            {product.oldPrice && (
+                              <span className="text-sm text-gray-400 line-through">
+                                ₹{product.oldPrice}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Arrow */}
+                        <div className="text-gray-400 text-xl">→</div>
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <div className="py-10 text-center">
+                  <div className="text-5xl mb-2">🔍</div>
+                  <h3 className="font-semibold text-gray-700">
+                    No products found
+                  </h3>
+                  <p className="text-sm text-gray-500 mt-1">
+                    Try searching with another keyword.
+                  </p>
                 </div>
-              </div>
-
-              {/* Arrow */}
-              <div className="text-gray-400 text-xl">→</div>
-            </Link>
-          ))}
-        </div>
-
-      </>
-    ) : (
-      <div className="py-10 text-center">
-        <div className="text-5xl mb-2">🔍</div>
-        <h3 className="font-semibold text-gray-700">
-          No products found
-        </h3>
-        <p className="text-sm text-gray-500 mt-1">
-          Try searching with another keyword.
-        </p>
-      </div>
-    )}
-  </div>
-)}
+              )}
+            </div>
+          )}
 
           {/* Right Actions */}
           <div className="flex items-center gap-2 md:gap-4">
@@ -208,6 +206,8 @@ const Header = () => {
         <div className="md:hidden px-[5%] pb-3">
           <div className="flex items-center border border-[#E5E7EB] rounded-md px-3 py-2">
             <input
+              value={search}
+              onChange={(e) => dispatch(setSearch(e.target.value))}
               type="text"
               placeholder="Search products..."
               className="flex-1 outline-none text-sm"
@@ -219,7 +219,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="fixed top-[104px] left-0 w-full bg-white shadow-lg md:hidden z-40">
+        <div className="fixed top-[104px] left-0 w-full bg-white shadow-lg md:hidden z-40 mt-3">
           {navLinks.map((item) => (
             <Link
               key={item.path}

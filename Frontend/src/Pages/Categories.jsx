@@ -61,13 +61,13 @@ const Categories = () => {
   return (
     <section className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-10 mt-10">
       {/* Mobile Categories */}
-      <div className="lg:hidden mb-8 overflow-x-auto">
+      <div className="lg:hidden mb-8 overflow-x-auto scrollbar-none">
         <div className="flex gap-3 min-w-max pb-2">
           {categories.map((category) => (
-            <button
+            <li
               key={category.slug}
               onClick={() => setSelectedCategory(category.slug)}
-              className={`flex flex-col items-center justify-center rounded-xl border px-3 py-3 min-w-[80px] transition
+              className={`flex flex-col items-center justify-center rounded-xl border px-3 py-3 min-w-[80px] transition cursor-pointer
               ${
                 selectedCategory === category.slug
                   ? "bg-indigo-600 text-white border-indigo-600"
@@ -78,7 +78,7 @@ const Categories = () => {
               <span className="text-[11px] mt-2 text-center">
                 {category.name}
               </span>
-            </button>
+            </li>
           ))}
         </div>
       </div>

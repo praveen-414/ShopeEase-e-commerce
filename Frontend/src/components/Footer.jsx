@@ -85,6 +85,9 @@ const Footer = () => {
                 <li key={item.name}>
                   <Link
                     to={item.path}
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
                     href="#"
                     className="text-[#6B7280] hover:text-[#4F46E5] transition"
                   >
@@ -107,6 +110,9 @@ const Footer = () => {
                 <li key={index}>
                   <Link
                     to={item.path}
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
                     href="#"
                     className="text-[#6B7280] hover:text-[#4F46E5] transition"
                   >
@@ -138,7 +144,7 @@ const Footer = () => {
                   className="text-[#0EA5E9] flex-shrink-0 mt-1"
                   size={22}
                 />
-                <span className="text-[#6B7280]">+91 98765 43210</span>
+                <span className="text-[#6B7280]">+91 XXXXX XXXXX</span>
               </div>
 
               <div className="flex gap-4">

@@ -63,28 +63,28 @@ const Register = () => {
             onChange={(e) => setName(e.target.value)}
             type="text"
             placeholder="Enter your name"
-            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#A1A1AA] px-3"
+            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#4F46E5] px-3"
           />
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Enter your email"
-            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#A1A1AA] px-3"
+            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#4F46E5] px-3"
           />
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Enter password"
-            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#A1A1AA] px-3"
+            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#4F46E5] px-3"
           />
           <input
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             type="password"
             placeholder="Confirm password"
-            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#A1A1AA] px-3"
+            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#4F46E5] px-3"
           />
 
           <p className="text-[#6B7280] text-xs">

@@ -40,7 +40,7 @@ const Login = () => {
 
 
   return (
-    <div className="bg-[#F8FAFC] min-h-dvh flex justify-center md:items-center pt-24 px-4 relative overflow-y-auto">
+    <div className="bg-[#F8FAFC] min-h-dvh flex justify-center items-center pt-24 px-4 relative overflow-y-auto">
       {/* logo  */}
       <div className="absolute top-10 left-10">
         <img src={logo} alt="" className="w-40" />
@@ -58,14 +58,14 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Enter your email"
-            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#A1A1AA] px-3"
+            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#4F46E5] px-3"
           />
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Enter password"
-            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#A1A1AA] px-3"
+            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#4F46E5] px-3"
           />
 
           <p className="text-[#6B7280] text-xs">
