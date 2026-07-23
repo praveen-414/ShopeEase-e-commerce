@@ -79,7 +79,7 @@ const Checkout = () => {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-28 sm:mt-24 lg:mt-28 pb-10">
-      <h1 className="text-3xl sm:text-4xl font-bold mb-6 dark:text-slate-50">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-6 dark:text-slate-50 sm:mt-15">
         Shipping Address
       </h1>
 
