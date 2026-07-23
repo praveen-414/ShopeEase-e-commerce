@@ -47,11 +47,16 @@ const Header = () => {
 
   const handleLogout = async () => {
     try {
-      await api.post("/auth/logout", {
-        withCredentials: true,
-      });
+      await api.post(
+        "/auth/logout",
+        {},
+        {
+          withCredentials: true,
+        },
+      );
       dispatch(setUser(null));
       dispatch(setCart([]));
+      setMenuOpen(false);
 
       toast.success("Logged out successfully");
       navigate("/login");
@@ -227,7 +232,10 @@ const Header = () => {
 
             {/* Hamburger */}
             <Button
-              onClick={() => setMenuOpen(!menuOpen)}
+              onClick={() => {
+                setMenuOpen(!menuOpen);
+                setOpen(false);
+              }}
               className="md:hidden bg-transparent text-black dark:text-slate-50 dark:bg-slate-800"
               text={
                 menuOpen ? (
