@@ -47,16 +47,11 @@ const Header = () => {
 
   const handleLogout = async () => {
     try {
-      await api.post(
-        "/auth/logout",
-        {},
-        {
-          withCredentials: true,
-        },
-      );
+      await api.post("/auth/logout",{}, {
+        withCredentials: true,
+      });
       dispatch(setUser(null));
       dispatch(setCart([]));
-      setMenuOpen(false);
 
       toast.success("Logged out successfully");
       navigate("/login");
@@ -184,7 +179,7 @@ const Header = () => {
                 />
 
                 {open && (
-                  <div className="absolute right-0 mt-2 w-32 bg-white dark:bg-slate-900 dark:border dark:border-slate-700  shadow-lg rounded-lg p-2">
+                 <div className="absolute right-0 top-full mt-2 z-[9999] w-32 bg-white dark:bg-slate-900 dark:border dark:border-slate-700 shadow-lg rounded-lg p-2 pointer-events-auto">
                     <li
                       onClick={handleLogout}
                       className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded style-none list-none cursor-pointer"
@@ -232,10 +227,7 @@ const Header = () => {
 
             {/* Hamburger */}
             <Button
-              onClick={() => {
-                setMenuOpen(!menuOpen);
-                setOpen(false);
-              }}
+              onClick={() => setMenuOpen(!menuOpen)}
               className="md:hidden bg-transparent text-black dark:text-slate-50 dark:bg-slate-800"
               text={
                 menuOpen ? (
