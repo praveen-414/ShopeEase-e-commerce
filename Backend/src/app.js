@@ -12,7 +12,7 @@ connectDB();
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://shopeease-e-commerce.onrender.com",
     credentials: true,
   }),
 );
@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api", productsRouter);
-app.use("/api/cart",cartRouter)
-app.use("/api/order",orderRouter)
+app.use("/api/cart", cartRouter);
+app.use("/api/order", orderRouter);
 
 export default app;
