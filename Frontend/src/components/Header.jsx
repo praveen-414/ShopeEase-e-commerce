@@ -268,10 +268,10 @@ const Header = () => {
               {item.name}
             </Link>
           ))}
-          <div className="px-6 py-5 border-t dark:border-slate-700">
-            <button
+          <div className="px-6 py-5 border-t dark:border-slate-700 border-[#E5E7EB]">
+            <li
               onClick={() => dispatch(setTheme())}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-lg border border-[#E5E7EB] bg-gray-100 hover:bg-gray-200 transition dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700"
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-lg border border-[#E5E7EB] bg-gray-100 hover:bg-gray-200 transition dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700 cursor-pointer"
             >
               {theme === "light" ? (
                 <>
@@ -284,7 +284,7 @@ const Header = () => {
                   <span>Light Mode</span>
                 </>
               )}
-            </button>
+            </li>
           </div>
         </div>
       )}
