@@ -10,15 +10,15 @@ const OrderSuccess = () => {
   const order = state?.order;
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 mt-20">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 text-center">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 mt-20 dark:bg-slate-900">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8 text-center dark:bg-slate-800">
         <FiCheckCircle size={80} className="mx-auto text-green-500" />
 
         <h1 className="text-3xl font-bold mt-5">Order Placed Successfully!</h1>
 
-        <p className="text-gray-500 mt-3">
+        <p className="text-gray-500 mt-3 dark:text-slate-300">
           Thank you for shopping with{" "}
-          <span className="font-semibold">ShopEase</span>. Your order has been
+          <span className="font-semibold ">ShopEase</span>. Your order has been
           placed successfully.
         </p>
 

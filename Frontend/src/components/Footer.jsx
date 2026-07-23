@@ -43,17 +43,17 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className="bg-[#F8FAFC] border-t border-[#E5E7EB]">
+    <footer className="bg-[#F8FAFC] border-t dark:border-slate-700 border-[#E5E7EB] dark:bg-slate-900 ">
       <div className="max-w-[90%] mx-auto px-6 lg:px-8 py-14">
         {/* Top Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 ">
           {/* Brand */}
           <div>
-            <h2 className="text-3xl font-bold text-[#111827]">
+            <h2 className="text-3xl font-bold text-[#111827] dark:text-slate-50">
               Shop<span className="text-[#0EA5E9]">Ease</span>
             </h2>
 
-            <p className="mt-5 text-[#6B7280] leading-7">
+            <p className="mt-5 text-[#6B7280] leading-7 dark:text-slate-300">
               ShopEase is your trusted destination for quality products at
               unbeatable prices. We make online shopping simple, secure, and
               enjoyable.
@@ -65,7 +65,7 @@ const Footer = () => {
                   <Link
                     key={index}
                     href="#"
-                    className="w-11 h-11 rounded-full bg-white border border-[#E5E7EB] flex items-center justify-center text-[#4F46E5] hover:bg-[#4F46E5] hover:text-white transition-all duration-300"
+                    className="w-11 h-11 rounded-full bg-white border border-[#E5E7EB] flex items-center justify-center text-[#4F46E5] hover:bg-[#4F46E5] hover:text-white transition-all duration-300 dark:bg-slate-800 dark:border-slate-600 dark:text-indigo-400" 
                   >
                     <Icon size={18} />
                   </Link>
@@ -76,7 +76,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-semibold text-[#111827] relative inline-block">
+            <h3 className="text-xl font-semibold text-[#111827] relative inline-block dark:text-slate-50">
               Quick Links
               <span className="absolute -bottom-2 left-0 w-14 h-1 rounded-full bg-[#0EA5E9]"></span>
             </h3>
@@ -90,7 +90,7 @@ const Footer = () => {
                       window.scrollTo({ top: 0, behavior: "smooth" })
                     }
                     href="#"
-                    className="text-[#6B7280] hover:text-[#4F46E5] transition"
+                    className="text-[#6B7280] hover:text-[#4F46E5] transition dark:text-slate-300 dark:hover:text-indigo-400"
                   >
                     {item.name}
                   </Link>
@@ -101,7 +101,7 @@ const Footer = () => {
 
           {/* Customer Support */}
           <div>
-            <h3 className="text-xl font-semibold text-[#111827] relative inline-block">
+            <h3 className="text-xl font-semibold text-[#111827] relative inline-block dark:text-slate-50">
               Customer Support
               <span className="absolute -bottom-2 left-0 w-14 h-1 rounded-full bg-[#0EA5E9]"></span>
             </h3>
@@ -115,7 +115,7 @@ const Footer = () => {
                       window.scrollTo({ top: 0, behavior: "smooth" })
                     }
                     href="#"
-                    className="text-[#6B7280] hover:text-[#4F46E5] transition"
+                    className="text-[#6B7280] hover:text-[#4F46E5] transition dark:text-slate-300 dark:hover:text-indigo-400"
                   >
                     {item.name}
                   </Link>
@@ -126,7 +126,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-xl font-semibold text-[#111827] relative inline-block">
+            <h3 className="text-xl font-semibold text-[#111827] relative inline-block dark:text-slate-50">
               Contact Us
               <span className="absolute -bottom-2 left-0 w-14 h-1 rounded-full bg-[#0EA5E9]"></span>
             </h3>
@@ -137,7 +137,7 @@ const Footer = () => {
                   className="text-[#0EA5E9] flex-shrink-0 mt-1"
                   size={22}
                 />
-                <span className="text-[#6B7280]">support@shopease.com</span>
+                <span className="text-[#6B7280] dark:text-slate-300">support@shopease.com</span>
               </div>
 
               <div className="flex gap-4">
@@ -145,7 +145,7 @@ const Footer = () => {
                   className="text-[#0EA5E9] flex-shrink-0 mt-1"
                   size={22}
                 />
-                <span className="text-[#6B7280]">+91 XXXXX XXXXX</span>
+                <span className="text-[#6B7280] dark:text-slate-300">+91 XXXXX XXXXX</span>
               </div>
 
               <div className="flex gap-4">
@@ -153,7 +153,7 @@ const Footer = () => {
                   className="text-[#0EA5E9] flex-shrink-0 mt-1"
                   size={22}
                 />
-                <span className="text-[#6B7280]">
+                <span className="text-[#6B7280] dark:text-slate-300">
                   Hyderabad, Telangana,
                   <br />
                   India
@@ -164,15 +164,15 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-[#E5E7EB] mt-14 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[#6B7280] text-sm text-center md:text-left">
+        <div className="border-t border-[#E5E7EB] dark:border-slate-700 mt-14 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-[#6B7280] text-sm text-center md:text-left dark:text-slate-300">
             © {new Date().getFullYear()} ShopEase. All rights reserved.
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-6 text-sm">
             <Link
               to="termsofservice"
-              className="text-[#6B7280] hover:text-[#4F46E5] transition"
+              className="text-[#6B7280] hover:text-[#4F46E5] transition dark:text-slate-300 dark:hover:text-indigo-400"
             >
               {" "}
               Terms of Service

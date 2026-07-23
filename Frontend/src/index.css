@@ -14,3 +14,6 @@ body{
   background-color: #F8FAFC;
 }
 
+ .dark body {
+    @apply bg-slate-900 text-slate-50;
+  }

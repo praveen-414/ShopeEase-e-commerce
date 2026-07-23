@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductCards = ({ title, rating, price, productImage, stock }) => {
   return (
-    <div className="w-full bg-white border border-[#E5E7EB] rounded-xl p-4 hover:shadow-lg transition duration-300 hover:-translate-y-1">
+    <div className="w-full bg-white border border-[#E5E7EB] rounded-xl p-4 hover:shadow-lg transition duration-300 hover:-translate-y-1 dark:bg-slate-700 dark:border-slate-700">
       {/* Product Image */}
       <div className="w-full aspect-square flex items-center justify-center overflow-hidden">
         <img
@@ -18,10 +18,10 @@ const ProductCards = ({ title, rating, price, productImage, stock }) => {
           {title}
         </h2>
 
-        <p className="text-xs sm:text-sm text-gray-500">⭐ {rating} / 5</p>
+        <p className="text-xs sm:text-sm text-gray-500 dark:text-slate-300">⭐ {rating} / 5</p>
 
         <div className="flex justify-between items-center">
-          <p className="text-lg font-bold text-[#4F46E5]">${price}</p>
+          <p className="text-lg font-bold text-[#4F46E5] dark:text-indigo-400">${price}</p>
 
           <span
             className={`text-xs font-medium ${

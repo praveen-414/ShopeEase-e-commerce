@@ -37,8 +37,7 @@ const Faq = () => {
     },
     {
       question: "Do you offer free shipping?",
-      answer:
-        "Yes. We provide free shipping on orders above ₹999.",
+      answer: "Yes. We provide free shipping on orders above ₹999.",
     },
     {
       question: "How long does a refund take?",
@@ -52,7 +51,7 @@ const Faq = () => {
   };
 
   return (
-    <section className="bg-[#F8FAFC] py-16 mt-20">
+    <section className="bg-[#F8FAFC] py-16 mt-20 dark:bg-slate-900">
       <div className="max-w-[90%] mx-auto px-5">
         {/* Heading */}
         <div className="text-center">
@@ -60,11 +59,11 @@ const Faq = () => {
             Frequently Asked Questions
           </p>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mt-3">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mt-3 dark:text-slate-50">
             How Can We Help?
           </h1>
 
-          <p className="text-[#6B7280] mt-5 leading-8">
+          <p className="text-[#6B7280] mt-5 leading-8 dark:text-slate-300">
             Find answers to the most common questions about orders, payments,
             shipping, returns, and more.
           </p>
@@ -75,13 +74,13 @@ const Faq = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white border border-[#E5E7EB] rounded-xl overflow-hidden"
+              className="bg-white dark:bg-slate-800 border border-[#E5E7EB] dark:border-slate-600 rounded-xl overflow-hidden transition-colors"
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full flex justify-between items-center p-6 text-left"
               >
-                <span className="text-lg font-semibold text-[#111827]">
+                <span className="text-lg font-semibold text-[#111827] dark:text-slate-50">
                   {faq.question}
                 </span>
 
@@ -93,14 +92,14 @@ const Faq = () => {
                 ) : (
                   <HiChevronDown
                     size={24}
-                    className="text-[#6B7280]"
+                    className="text-[#6B7280] dark:text-slate-300"
                   />
                 )}
               </button>
 
               {activeIndex === index && (
                 <div className="px-6 pb-6">
-                  <p className="text-[#6B7280] leading-7">
+                  <p className="text-[#6B7280] dark:text-slate-300 leading-7">
                     {faq.answer}
                   </p>
                 </div>

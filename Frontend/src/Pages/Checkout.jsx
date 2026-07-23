@@ -79,15 +79,15 @@ const Checkout = () => {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-10 mt-25">
-      <h1 className="text-3xl font-bold mb-6">Shipping Address</h1>
+      <h1 className="text-3xl font-bold mb-6 dark:text-slate-50">Shipping Address</h1>
 
-      <div className="bg-white shadow rounded-xl p-6 space-y-5">
+      <div className="bg-white dark:bg-slate-800 shadow rounded-xl p-6 space-y-5">
         <input
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           type="text"
           placeholder="Full Name"
-          className="w-full border rounded-lg p-3 outline-none focus:border-indigo-600"
+          className="w-full border rounded-lg p-3 outline-none focus:border-indigo-600 dark:border-slate-600 dark:focus:border-indigo-400"
         />
 
         <input
@@ -95,7 +95,7 @@ const Checkout = () => {
           onChange={(e) => setPhone(e.target.value)}
           type="text"
           placeholder="Phone Number"
-          className="w-full border rounded-lg p-3 outline-none focus:border-indigo-600"
+          className="w-full border rounded-lg p-3 outline-none focus:border-indigo-600 dark:border-slate-600 dark:focus:border-indigo-400"
         />
 
         <input
@@ -103,7 +103,7 @@ const Checkout = () => {
           onChange={(e) => setEmail(e.target.value)}
           type="email"
           placeholder="Email Address"
-          className="w-full border rounded-lg p-3 outline-none focus:border-indigo-600"
+          className="w-full border rounded-lg p-3 outline-none focus:border-indigo-600 dark:border-slate-600 dark:focus:border-indigo-400"
         />
 
         <textarea
@@ -111,7 +111,7 @@ const Checkout = () => {
           onChange={(e) => setStreetAddress(e.target.value)}
           placeholder="Street Address"
           rows="4"
-          className="w-full border rounded-lg p-3 outline-none focus:border-indigo-600"
+          className="w-full border rounded-lg p-3 outline-none focus:border-indigo-600 dark:border-slate-600 dark:focus:border-indigo-400"
         ></textarea>
 
         <div className="grid md:grid-cols-2 gap-4">
@@ -120,7 +120,7 @@ const Checkout = () => {
             onChange={(e) => setCity(e.target.value)}
             type="text"
             placeholder="City"
-            className="border rounded-lg p-3 outline-none focus:border-indigo-600"
+            className="border rounded-lg p-3 outline-none focus:border-indigo-600 dark:border-slate-600 dark:focus:border-indigo-400"
           />
 
           <input
@@ -128,7 +128,7 @@ const Checkout = () => {
             onChange={(e) => setState(e.target.value)}
             type="text"
             placeholder="State"
-            className="border rounded-lg p-3 outline-none focus:border-indigo-600"
+            className="border rounded-lg p-3 outline-none focus:border-indigo-600 dark:border-slate-600 dark:focus:border-indigo-400"
           />
 
           <input
@@ -136,7 +136,7 @@ const Checkout = () => {
             onChange={(e) => setPincode(e.target.value)}
             type="text"
             placeholder="Pincode"
-            className="border rounded-lg p-3 outline-none focus:border-indigo-600"
+            className="border rounded-lg p-3 outline-none focus:border-indigo-600 dark:border-slate-600 dark:focus:border-indigo-400"
           />
 
           <input
@@ -144,7 +144,7 @@ const Checkout = () => {
             onChange={(e) => setCountry(e.target.value)}
             type="text"
             placeholder="Country"
-            className="border rounded-lg p-3 outline-none focus:border-indigo-600"
+            className="border rounded-lg p-3 outline-none focus:border-indigo-600 dark:border-slate-600 dark:focus:border-indigo-400"
           />
         </div>
 

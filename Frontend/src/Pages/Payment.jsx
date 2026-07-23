@@ -82,19 +82,19 @@ const Payment = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-10 mt-30">
+    <div className="min-h-screen bg-gray-50 py-10 mt-30 dark:bg-slate-900">
       <div className="max-w-6xl mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-8">Payment</h1>
+        <h1 className="text-3xl font-bold mb-8 dark:text-slate-50">Payment</h1>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Payment Methods */}
-          <div className="lg:col-span-2 bg-white rounded-xl shadow p-6">
+          <div className="lg:col-span-2 bg-white rounded-xl shadow p-6 dark:bg-slate-800">
             <h2 className="text-xl font-semibold mb-6">
               Select Payment Method
             </h2>
 
             {/* UPI */}
-            <label className="flex items-center gap-3 border rounded-lg p-4 cursor-pointer hover:border-indigo-600">
+            <label className="flex items-center gap-3 border rounded-lg p-4 cursor-pointer hover:border-indigo-600 dark:hover:border-indigo-400 dark:border-slate-600">
               <input
                 type="radio"
                 name="payment"
@@ -106,7 +106,7 @@ const Payment = () => {
             </label>
 
             {/* Card */}
-            <label className="flex items-center gap-3 border rounded-lg p-4 mt-4 cursor-pointer hover:border-indigo-600">
+            <label className="flex items-center gap-3 border rounded-lg p-4 mt-4 cursor-pointer hover:border-indigo-600 dark:hover:border-indigo-400 dark:border-slate-600">
               <input
                 type="radio"
                 name="payment"
@@ -118,7 +118,7 @@ const Payment = () => {
             </label>
 
             {/* COD */}
-            <label className="flex items-center gap-3 border rounded-lg p-4 mt-4 cursor-pointer hover:border-indigo-600">
+            <label className="flex items-center gap-3 border rounded-lg p-4 mt-4 cursor-pointer hover:border-indigo-600 dark:hover:border-indigo-400 dark:border-slate-600">
               <input
                 type="radio"
                 name="payment"
@@ -200,7 +200,7 @@ const Payment = () => {
 
           {/* Order Summary */}
 
-          <div className="bg-white rounded-xl shadow p-6 h-fit">
+          <div className="bg-white dark:bg-slate-800 rounded-xl shadow p-6 h-fit">
             <h2 className="text-xl font-semibold mb-5">Order Summary</h2>
 
             <div className="space-y-4">

@@ -39,7 +39,7 @@ const ShippingInfo = () => {
   ];
 
   return (
-    <section className="bg-[#F8FAFC] py-16 mt-20">
+    <section className="bg-[#F8FAFC] dark:bg-slate-900 py-16 mt-20">
       <div className="max-w-6xl mx-auto px-5">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto">
@@ -47,11 +47,11 @@ const ShippingInfo = () => {
             Shipping Information
           </p>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mt-3">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mt-3 dark:text-slate-50">
             Fast & Reliable Shipping
           </h1>
 
-          <p className="text-[#6B7280] mt-5 leading-8">
+          <p className="text-[#6B7280] dark:text-slate-300 mt-5 leading-8">
             We work hard to deliver your orders quickly and safely. Below you'll
             find everything you need to know about our shipping process.
           </p>
@@ -62,7 +62,7 @@ const ShippingInfo = () => {
           {shippingDetails.map((item, index) => (
             <div
               key={index}
-              className="bg-white border border-[#E5E7EB] rounded-2xl p-7 hover:shadow-lg transition"
+              className="bg-white dark:bg-slate-800 border border-[#E5E7EB] dark:border-slate-600 rounded-2xl p-7 shadow-sm hover:shadow-lg transition-all duration-300"
             >
               <div
                 className={`w-14 h-14 rounded-xl flex items-center justify-center ${item.color}`}
@@ -70,11 +70,11 @@ const ShippingInfo = () => {
                 {item.icon}
               </div>
 
-              <h2 className="text-xl font-semibold text-[#111827] mt-6">
+              <h2 className="text-xl font-semibold text-[#111827] dark:text-slate-50 mt-6">
                 {item.title}
               </h2>
 
-              <p className="text-[#6B7280] mt-3 leading-7">
+              <p className="text-[#6B7280] dark:text-slate-300 mt-3 leading-7">
                 {item.description}
               </p>
             </div>
@@ -82,12 +82,12 @@ const ShippingInfo = () => {
         </div>
 
         {/* Shipping Policy */}
-        <div className="mt-16 bg-white border border-[#E5E7EB] rounded-2xl p-8">
-          <h2 className="text-2xl font-bold text-[#111827]">
+        <div className="mt-16 bg-white dark:bg-slate-800 border border-[#E5E7EB] dark:border-slate-600 rounded-2xl p-8 shadow-sm">
+          <h2 className="text-2xl font-bold text-[#111827] dark:text-slate-50">
             Shipping Policy
           </h2>
 
-          <ul className="mt-6 space-y-4 text-[#6B7280] list-disc pl-6">
+          <ul className="mt-6 space-y-4 text-[#6B7280] dark:text-slate-300 list-disc pl-6">
             <li>Orders are processed within 1–2 business days.</li>
             <li>Delivery usually takes 3–7 business days.</li>
             <li>Free shipping on orders above ₹999.</li>

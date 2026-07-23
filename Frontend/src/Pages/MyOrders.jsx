@@ -48,26 +48,26 @@ const MyOrders = () => {
   };
 
   return (
-    <div className=" bg-gray-50 py-10 mt-28">
+    <div className=" bg-gray-50 py-10 mt-28 dark:bg-slate-900">
       <div className="max-w-6xl mx-auto px-4">
 
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold">My Orders</h1>
+          <h1 className="text-3xl font-bold dark:text-slate-50">My Orders</h1>
 
           {orders.length > 0 && (
-            <p className="text-gray-500">
+            <p className="text-gray-500 dark:text-slate-300">
               {orders.length} {orders.length === 1 ? "Order" : "Orders"}
             </p>
           )}
         </div>
 
         {orders.length === 0 ? (
-          <div className="bg-white rounded-2xl shadow p-10 text-center">
-            <h2 className="text-2xl font-semibold">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl shadow p-10 text-center">
+            <h2 className="text-2xl font-semibold dark:text-slate-50">
               No Orders Yet
             </h2>
 
-            <p className="text-gray-500 mt-2">
+            <p className="text-gray-500 mt-2 dark:text-slate-300">
               Looks like you haven't placed any orders.
             </p>
 
@@ -83,17 +83,17 @@ const MyOrders = () => {
             {orders.map((order) => (
               <div
                 key={order._id}
-                className="bg-white rounded-2xl shadow-sm border p-6"
+                className="bg-white dark:bg-slate-900 dark:border-slate-700 rounded-2xl shadow-sm border p-6"
               >
                 {/* Header */}
                 <div className="flex justify-between items-center border-b pb-4 mb-4">
 
                   <div>
-                    <h2 className="font-semibold text-lg">
+                    <h2 className="font-semibold text-lg dark:text-slate-50">
                       Order #{order._id.slice(-8).toUpperCase()}
                     </h2>
 
-                    <p className="text-sm text-gray-500 mt-1">
+                    <p className="text-sm text-gray-500 mt-1 dark:text-slate-300">
                       {new Date(order.createdAt).toLocaleDateString()}
                     </p>
                   </div>
@@ -120,15 +120,15 @@ const MyOrders = () => {
                       <img
                         src={item.product?.productImage}
                         alt={item.product?.title}
-                        className="w-20 h-20 object-contain bg-gray-100 rounded-lg"
+                        className="w-20 h-20 object-contain bg-gray-100 rounded-lg dark:bg-slate-700"
                       />
 
                       <div className="flex-1">
-                        <h3 className="font-semibold">
+                        <h3 className="font-semibold dark:text-slate-50">
                           {item.product?.title}
                         </h3>
 
-                        <p className="text-gray-500 text-sm mt-1">
+                        <p className="text-gray-500 text-sm mt-1 dark:text-slate-300">
                           Quantity: {item?.quantity}
                         </p>
 
@@ -164,9 +164,9 @@ const MyOrders = () => {
   </div>
 
   <div className="text-right">
-    <p className="text-gray-500 text-sm">Total Amount</p>
+    <p className="text-gray-500 text-sm dark:text-slate-300">Total Amount</p>
 
-    <h2 className="text-xl font-bold text-indigo-600">
+    <h2 className="text-xl font-bold text-indigo-600 dark:text-indigo-400">
       ${order.totalAmount.toFixed(2)}
     </h2>
   </div>

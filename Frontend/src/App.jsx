@@ -36,8 +36,8 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (theme == "light") {
-      document.documentElement.classList.add("light");
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }

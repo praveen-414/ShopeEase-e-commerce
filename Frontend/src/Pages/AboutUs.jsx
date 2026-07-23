@@ -41,19 +41,19 @@ const AboutUs = () => {
     },
   ];
   return (
-    <section className="bg-[#F8FAFC] py-16 mt-20">
+    <section className="bg-[#F8FAFC] py-16 mt-20 dark:bg-slate-900">
       <div className="max-w-[90%] mx-auto px-5">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto">
-          <p className="text-[#4F46E5] font-semibold uppercase tracking-wider">
+          <p className="text-[#4F46E5] dark:text-indigo-400 font-semibold uppercase tracking-wider">
             About ShopEase
           </p>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mt-3">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mt-3 dark:text-slate-50">
             Shopping Made Simple & Reliable
           </h1>
 
-          <p className="text-[#6B7280] mt-5 leading-8">
+          <p className="text-[#6B7280] mt-5 leading-8 dark:text-slate-300">
             At ShopEase, our mission is to make online shopping fast,
             affordable, and enjoyable. We bring together quality products,
             secure payments, and reliable delivery to create a seamless shopping
@@ -64,7 +64,7 @@ const AboutUs = () => {
         {/* Content */}
         <div className="grid lg:grid-cols-2 gap-14 items-center mt-20">
           {/* Image */}
-          <div className="bg-white rounded-3xl border border-[#E5E7EB] p-10 flex justify-center items-center">
+          <div className="bg-white rounded-3xl border border-[#E5E7EB] p-10 flex justify-center items-center dark:bg-slate-700 dark:border-slate-700">
             <img
               src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900"
               alt="About ShopEase"
@@ -74,18 +74,18 @@ const AboutUs = () => {
 
           {/* Text */}
           <div>
-            <h2 className="text-3xl font-bold text-[#111827]">
+            <h2 className="text-3xl font-bold text-[#111827] dark:text-slate-300">
               Your Trusted Online Shopping Destination
             </h2>
 
-            <p className="text-[#6B7280] mt-5 leading-8">
+            <p className="text-[#6B7280] mt-5 leading-8 dark:text-slate-300">
               Whether you're shopping for fashion, electronics, home essentials,
               or lifestyle products, ShopEase offers a carefully selected
               collection at competitive prices. We believe shopping should be
               convenient, transparent, and enjoyable.
             </p>
 
-            <p className="text-[#6B7280] mt-5 leading-8">
+            <p className="text-[#6B7280] mt-5 leading-8 dark:text-slate-300">
               With secure checkout, fast shipping, easy returns, and dedicated
               customer support, we're committed to delivering the best shopping
               experience every time.
@@ -111,26 +111,26 @@ const AboutUs = () => {
         </div>
 
         {/* Stats */}
-        <div className="bg-white border border-[#E5E7EB] rounded-3xl mt-24 p-10">
+        <div className="bg-white border border-[#E5E7EB] rounded-3xl mt-24 p-10 dark:bg-slate-900 dark:border-slate-700">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
             <div>
               <h2 className="text-4xl font-bold text-[#4F46E5]">10K+</h2>
-              <p className="text-[#6B7280] mt-2">Happy Customers</p>
+              <p className="text-[#6B7280] mt-2 dark:text-slate-300">Happy Customers</p>
             </div>
 
             <div>
               <h2 className="text-4xl font-bold text-[#0EA5E9]">500+</h2>
-              <p className="text-[#6B7280] mt-2">Quality Products</p>
+              <p className="text-[#6B7280] mt-2 dark:text-slate-300">Quality Products</p>
             </div>
 
             <div>
               <h2 className="text-4xl font-bold text-[#22C55E]">99%</h2>
-              <p className="text-[#6B7280] mt-2">Customer Satisfaction</p>
+              <p className="text-[#6B7280] mt-2 dark:text-slate-300">Customer Satisfaction</p>
             </div>
 
             <div>
               <h2 className="text-4xl font-bold text-[#F97316]">24/7</h2>
-              <p className="text-[#6B7280] mt-2">Customer Support</p>
+              <p className="text-[#6B7280] mt-2 dark:text-slate-300">Customer Support</p>
             </div>
           </div>
         </div>

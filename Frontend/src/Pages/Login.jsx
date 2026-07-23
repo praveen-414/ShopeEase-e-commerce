@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
+import darkLogo from "../assets/darkLogo.png";
 import Button from "../components/Button";
 import toast from "react-hot-toast";
 import api from "../config/axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../redux/slices/userSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
+  const { theme } = useSelector((state) => state.theme);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -19,14 +21,14 @@ const Login = () => {
     if (!email || !password) {
       return toast.error("All fields are required!");
     }
-    setLoading(true)
+    setLoading(true);
     try {
       const res = await api.post("/auth/login", {
         email,
         password,
       });
       console.log(res.data.user);
-      
+
       dispatch(setUser(res.data.user));
       toast.success(res.data.message);
       navigate("/");
@@ -35,54 +37,61 @@ const Login = () => {
       console.log(error.response);
       console.log(error.response?.data);
       toast.error(error.response?.data?.message || "Something went wrong");
-    }finally{
-      setLoading(false)
+    } finally {
+      setLoading(false);
     }
   };
 
-
   return (
-    <div className="bg-[#F8FAFC] min-h-dvh flex justify-center items-center pt-24 px-4 relative overflow-y-auto">
-      {/* logo  */}
-      <div 
-      onClick={()=>navigate("/")}
-      className="absolute top-10 left-10 cursor-pointer">
-        <img src={logo} alt="" className="w-40" />
+    <div className="bg-[#F8FAFC] dark:bg-slate-900 min-h-dvh flex justify-center items-center pt-24 px-4 relative overflow-y-auto">
+      {/* Logo */}
+      <div
+        onClick={() => navigate("/")}
+        className="absolute top-10 left-10 cursor-pointer"
+      >
+        <img
+          src={theme === "light" ? logo : darkLogo}
+          alt="ShopEase Logo"
+          className="w-40"
+        />
       </div>
-      <div className="bg-[FFFFFF] w-full md:w-[60%] lg:w-[30%] h-fit border border-[#E5E7EB] rounded-lg shadow-md flex flex-col gap-7 p-8">
-        {/* heading  */}
-        <h1 className="text-center text-[#111827] text-3xl font-bold">
+
+      <div className="bg-white dark:bg-slate-800 w-full md:w-[60%] lg:w-[30%] h-fit border border-[#E5E7EB] dark:border-slate-600 rounded-lg shadow-md flex flex-col gap-7 p-8 transition-colors duration-300">
+        {/* Heading */}
+        <h1 className="text-center text-[#111827] dark:text-slate-50 text-3xl font-bold">
           Welcome Back! <br />
           Login
         </h1>
-        {/* input fields  */}
+
+        {/* Input Fields */}
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Enter your email"
-            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#4F46E5] px-3"
+            className="py-2 px-3 rounded-md bg-transparent text-[#111827] dark:text-slate-50 placeholder:text-[#9CA3AF] dark:placeholder:text-slate-400 border border-[#E5E7EB] dark:border-slate-600 outline-none focus:ring-2 focus:ring-[#4F46E5] dark:focus:ring-indigo-400"
           />
+
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Enter password"
-            className="py-2 rounded-md bg-transparent outline-0 border border-[#E5E7EB] focus:ring-2 focus:ring-[#4F46E5] px-3"
+            className="py-2 px-3 rounded-md bg-transparent text-[#111827] dark:text-slate-50 placeholder:text-[#9CA3AF] dark:placeholder:text-slate-400 border border-[#E5E7EB] dark:border-slate-600 outline-none focus:ring-2 focus:ring-[#4F46E5] dark:focus:ring-indigo-400"
           />
 
-          <p className="text-[#6B7280] text-xs">
+          <p className="text-[#6B7280] dark:text-slate-300 text-xs">
             Don't have an account?{" "}
             <Link
               to="/register"
-              className="text-[#4F46E5] text-xs font-bold cursor-pointer"
+              className="text-[#4F46E5] font-bold dark:text-indigo-400"
             >
               Sign up
             </Link>
           </p>
 
-          {/* Login button  */}
+          {/* Login Button */}
           <Button text={loading ? "Logging..." : "Login"} />
         </form>
       </div>

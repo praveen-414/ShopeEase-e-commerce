@@ -87,7 +87,7 @@ const SingleProduct = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Product Image */}
 
-        <div className="bg-white border border-[#E5E7EB] rounded-xl p-6 flex justify-center items-center">
+        <div className="bg-white border dark:bg-slate-800 dark:border-slate-700 border-[#E5E7EB] rounded-xl p-6 flex justify-center items-center">
           <img
             src={product?.productImage}
             alt={product?.title}
@@ -100,7 +100,7 @@ const SingleProduct = () => {
         <div className="flex flex-col">
           <h1 className="text-2xl md:text-4xl font-bold">{product?.title}</h1>
 
-          <div className="flex flex-wrap gap-5 mt-4 text-sm text-gray-600">
+          <div className="flex flex-wrap gap-5 mt-4 text-sm text-gray-600 dark:text-slate-300">
             <span>⭐ {product?.rating} / 5</span>
 
             <span className="text-green-600 font-semibold">
@@ -108,13 +108,13 @@ const SingleProduct = () => {
             </span>
           </div>
 
-          <h2 className="text-3xl font-bold text-[#4F46E5] mt-5">
+          <h2 className="text-3xl font-bold text-[#4F46E5] mt-5 dark:text-indigo-400">
             $ {product?.price}
           </h2>
 
           <hr className="my-6" />
 
-          <p className="text-gray-600 leading-7">{product?.description}</p>
+          <p className="text-gray-600 leading-7 dark:text-slate-300">{product?.description}</p>
 
           {/* Tags */}
 
@@ -122,7 +122,7 @@ const SingleProduct = () => {
             {product?.tags?.map((tag, index) => (
               <span
                 key={index}
-                className="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full"
+                className="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full "
               >
                 {tag}
               </span>
@@ -135,7 +135,7 @@ const SingleProduct = () => {
             <h2 className="text-xl font-semibold">Product Details</h2>
 
             <div className="flex flex-col sm:flex-row sm:justify-between border-b pb-3 gap-2">
-              <span className="text-gray-500">Warranty</span>
+              <span className="text-gray-500 dark:text-slate-300">Warranty</span>
 
               <span className="font-medium">
                 {product?.warrantyInformation}
@@ -143,13 +143,13 @@ const SingleProduct = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row sm:justify-between border-b pb-3 gap-2">
-              <span className="text-gray-500">Return Policy</span>
+              <span className="text-gray-500 dark:text-slate-300">Return Policy</span>
 
               <span className="font-medium">{product?.returnPolicy}</span>
             </div>
 
             <div className="flex flex-col sm:flex-row sm:justify-between border-b pb-3 gap-2">
-              <span className="text-gray-500">Shipping</span>
+              <span className="text-gray-500 dark:text-slate-300">Shipping</span>
 
               <span className="font-medium">
                 {product?.shippingInformation}
@@ -157,7 +157,7 @@ const SingleProduct = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
-              <span className="text-gray-500">Availability</span>
+              <span className="text-gray-500 dark:text-slate-300">Availability</span>
 
               <span className="text-green-600 font-semibold">
                 {product?.availabilityStatus}
@@ -172,18 +172,18 @@ const SingleProduct = () => {
               <div className="flex w-fit">
                 <button
                   onClick={decreaseCount}
-                  className="w-12 h-12 border border-[#E5E7EB] rounded-l-lg text-xl font-semibold hover:bg-gray-100 transition"
+                  className="w-12 h-12 border border-[#E5E7EB] rounded-l-lg text-xl font-semibold hover:bg-gray-100 transition dark:border-slate-700 dark:hover:bg-slate-800"
                 >
                   -
                 </button>
 
-                <div className="w-14 h-12 border-y border-[#E5E7EB] flex items-center justify-center font-semibold">
+                <div className="w-14 h-12 border-y border-[#E5E7EB] flex items-center justify-center font-semibold dark:border-slate-700 ">
                   {quantity}
                 </div>
 
                 <button
                   onClick={increaseCount}
-                  className="w-12 h-12 border border-[#E5E7EB] rounded-r-lg text-xl font-semibold hover:bg-gray-100 transition"
+                  className="w-12 h-12 border border-[#E5E7EB] rounded-r-lg text-xl font-semibold hover:bg-gray-100 transition dark:border-slate-700 dark:hover:bg-slate-800"
                 >
                   +
                 </button>

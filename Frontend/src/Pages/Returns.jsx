@@ -39,7 +39,7 @@ const Returns = () => {
   ];
 
   return (
-    <section className="bg-[#F8FAFC] py-16 mt-20">
+    <section className="bg-[#F8FAFC] dark:bg-slate-900 py-16 mt-20">
       <div className="max-w-6xl mx-auto px-5">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto">
@@ -47,11 +47,11 @@ const Returns = () => {
             Returns & Refunds
           </p>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mt-3">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] dark:text-slate-50 mt-3">
             Simple & Hassle-Free Returns
           </h1>
 
-          <p className="text-[#6B7280] mt-5 leading-8">
+          <p className="text-[#6B7280] dark:text-slate-300 mt-5 leading-8">
             Your satisfaction is our priority. If you're not completely happy
             with your purchase, we're here to make the return and refund process
             quick and easy.
@@ -63,7 +63,7 @@ const Returns = () => {
           {policies.map((item, index) => (
             <div
               key={index}
-              className="bg-white border border-[#E5E7EB] rounded-2xl p-7 hover:shadow-lg transition"
+              className="bg-white dark:bg-slate-800 border border-[#E5E7EB] dark:border-slate-600 rounded-2xl p-7 shadow-sm hover:shadow-lg transition-all duration-300"
             >
               <div
                 className={`w-14 h-14 rounded-xl flex items-center justify-center ${item.color}`}
@@ -71,11 +71,11 @@ const Returns = () => {
                 {item.icon}
               </div>
 
-              <h2 className="text-xl font-semibold text-[#111827] mt-6">
+              <h2 className="text-xl font-semibold text-[#111827] dark:text-slate-50 mt-6">
                 {item.title}
               </h2>
 
-              <p className="text-[#6B7280] mt-3 leading-7">
+              <p className="text-[#6B7280] dark:text-slate-300 mt-3 leading-7">
                 {item.description}
               </p>
             </div>
@@ -83,18 +83,21 @@ const Returns = () => {
         </div>
 
         {/* Policy */}
-        <div className="mt-16 bg-white border border-[#E5E7EB] rounded-2xl p-8">
-          <h2 className="text-2xl font-bold text-[#111827]">
+        <div className="mt-16 bg-white dark:bg-slate-800 border border-[#E5E7EB] dark:border-slate-600 rounded-2xl p-8 shadow-sm">
+          <h2 className="text-2xl font-bold text-[#111827] dark:text-slate-50">
             Return & Refund Policy
           </h2>
 
-          <ul className="mt-6 space-y-4 list-disc pl-6 text-[#6B7280] leading-7">
+          <ul className="mt-6 space-y-4 list-disc pl-6 text-[#6B7280] dark:text-slate-300 leading-7">
             <li>Returns are accepted within 7 days of delivery.</li>
             <li>Products must be unused and in their original packaging.</li>
             <li>Damaged or defective items can be replaced or refunded.</li>
             <li>Refunds are processed within 5–7 business days after approval.</li>
             <li>Shipping charges are non-refundable unless the product is defective.</li>
-            <li>Some products may not be eligible for return due to hygiene or other restrictions.</li>
+            <li>
+              Some products may not be eligible for return due to hygiene or
+              other restrictions.
+            </li>
           </ul>
         </div>
       </div>

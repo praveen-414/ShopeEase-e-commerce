@@ -11,10 +11,10 @@ const Products = () => {
   return (
     <div className="w-full mt-10 mb-10">
       <div className="w-full max-w-[90%] mx-auto">
-        <h1 className="text-3xl font-bold text-blue-600">
+        <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">
           Explore Products
         </h1>
-        <p className="text-[#6B7280]">Browse our latest collection</p>
+        <p className="text-[#6B7280] dark:text-slate-500">Browse our latest collection</p>
 
         {/* products  */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">

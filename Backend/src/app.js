@@ -12,7 +12,7 @@ connectDB();
 const app = express();
 app.use(
   cors({
-    origin: "https://shopeease-e-commerce.onrender.com",
+    origin: "http://localhost:5173",
     credentials: true,
   }),
 );

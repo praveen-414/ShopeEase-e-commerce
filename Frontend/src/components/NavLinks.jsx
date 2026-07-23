@@ -11,21 +11,21 @@ const NavLinks = () => {
   ];
 
   return (
-    <div className="fixed top-16 left-0 w-full bg-white border-b border-[#E5E7EB] z-40">
+    <div className="fixed top-16 left-0 w-full bg-white border-b border-[#E5E7EB] dark:border-slate-700 z-40 dark:bg-slate-800 ">
       <div className="max-w-[90%] mx-auto overflow-x-auto scrollbar-hide">
         <ul className="flex gap-6 lg:gap-10 py-4 min-w-max">
           {navLinks.map((item) => (
             <li
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               key={item.path}
-              className="whitespace-nowrap"
+              className="whitespace-nowrap "
             >
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#4F46E5] font-semibold"
-                    : "text-[#111827] font-semibold hover:text-[#4F46E5] transition-colors"
+                    ? "text-[#4F46E5] dark:text-indigo-400 font-semibold"
+                    : "text-[#111827] font-semibold hover:text-[#4F46E5] transition-colors dark:text-slate-50"
                 }
               >
                 {item.name}

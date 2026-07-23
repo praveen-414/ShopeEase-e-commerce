@@ -39,7 +39,7 @@ const Policy = () => {
   ];
 
   return (
-    <section className="bg-[#F8FAFC] py-16 mt-20">
+    <section className="bg-[#F8FAFC] dark:bg-slate-900 py-16 mt-20">
       <div className="max-w-6xl mx-auto px-5">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto">
@@ -47,11 +47,11 @@ const Policy = () => {
             Privacy Policy
           </p>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mt-3">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] dark:text-slate-50 mt-3">
             Your Privacy Matters
           </h1>
 
-          <p className="text-[#6B7280] mt-5 leading-8">
+          <p className="text-[#6B7280] dark:text-slate-300 mt-5 leading-8">
             At ShopEase, we are committed to protecting your personal
             information and ensuring a safe, secure, and transparent shopping
             experience.
@@ -63,7 +63,7 @@ const Policy = () => {
           {sections.map((item, index) => (
             <div
               key={index}
-              className="bg-white border border-[#E5E7EB] rounded-2xl p-7 hover:shadow-lg transition"
+              className="bg-white dark:bg-slate-800 border border-[#E5E7EB] dark:border-slate-600 rounded-2xl p-7 shadow-sm hover:shadow-lg transition-all duration-300"
             >
               <div
                 className={`w-14 h-14 rounded-xl flex items-center justify-center ${item.color}`}
@@ -71,11 +71,11 @@ const Policy = () => {
                 {item.icon}
               </div>
 
-              <h2 className="text-xl font-semibold text-[#111827] mt-6">
+              <h2 className="text-xl font-semibold text-[#111827] dark:text-slate-50 mt-6">
                 {item.title}
               </h2>
 
-              <p className="text-[#6B7280] mt-3 leading-7">
+              <p className="text-[#6B7280] dark:text-slate-300 mt-3 leading-7">
                 {item.description}
               </p>
             </div>
@@ -83,12 +83,12 @@ const Policy = () => {
         </div>
 
         {/* Policy Details */}
-        <div className="mt-16 bg-white border border-[#E5E7EB] rounded-2xl p-8">
-          <h2 className="text-2xl font-bold text-[#111827]">
+        <div className="mt-16 bg-white dark:bg-slate-800 border border-[#E5E7EB] dark:border-slate-600 rounded-2xl p-8 shadow-sm">
+          <h2 className="text-2xl font-bold text-[#111827] dark:text-slate-50">
             Privacy Policy Summary
           </h2>
 
-          <ul className="mt-6 space-y-4 list-disc pl-6 text-[#6B7280] leading-7">
+          <ul className="mt-6 space-y-4 list-disc pl-6 text-[#6B7280] dark:text-slate-300 leading-7">
             <li>We collect only the information necessary to process your orders.</li>
             <li>Your payment information is handled through secure payment gateways.</li>
             <li>We never sell or rent your personal information to third parties.</li>
