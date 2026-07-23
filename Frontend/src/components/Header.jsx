@@ -67,7 +67,11 @@ const Header = () => {
         <div className="h-16 max-w-[90%] mx-auto flex items-center justify-between gap-4">
           {/* Logo */}
           <Link className="dark:text-slate-50" to="/">
-            <img src={theme === "light" ? logo : darkLogo}  alt="logo" className="w-28 md:w-36" />
+            <img
+              src={theme === "light" ? logo : darkLogo}
+              alt="logo"
+              className="w-28 md:w-36"
+            />
           </Link>
 
           {/* Search (Desktop) */}
@@ -198,12 +202,26 @@ const Header = () => {
 
             <span
               onClick={() => dispatch(setTheme())}
-              className="border border-[#E5E7EB] p-3 rounded-full cursor-pointer transition-all bg-gray-100 dark:bg-slate-800 dark:border-0 dark:hover:bg-slate-700"
+              className="
+    hidden md:flex
+    border border-[#E5E7EB]
+    p-3
+    rounded-full
+    cursor-pointer
+    transition-all
+    bg-gray-100
+    dark:bg-slate-800
+    dark:hover:bg-slate-700
+    dark:border-0
+    flex items-center justify-center
+    w-9 h-9 md:w-11 md:h-11
+    shrink-0
+  "
             >
               {theme === "light" ? (
-                <MdOutlineDarkMode size={20} />
+                <MdOutlineDarkMode className="text-[18px] md:text-[20px]" />
               ) : (
-                <MdOutlineLightMode size={20} />
+                <MdOutlineLightMode className="text-[18px] md:text-[20px]" />
               )}
             </span>
 
@@ -250,6 +268,24 @@ const Header = () => {
               {item.name}
             </Link>
           ))}
+          <div className="px-6 py-5 border-t dark:border-slate-700">
+            <button
+              onClick={() => dispatch(setTheme())}
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-lg border border-[#E5E7EB] bg-gray-100 hover:bg-gray-200 transition dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700"
+            >
+              {theme === "light" ? (
+                <>
+                  <MdOutlineDarkMode size={20} />
+                  <span>Dark Mode</span>
+                </>
+              ) : (
+                <>
+                  <MdOutlineLightMode size={20} />
+                  <span>Light Mode</span>
+                </>
+              )}
+            </button>
+          </div>
         </div>
       )}
     </>
