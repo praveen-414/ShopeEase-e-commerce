@@ -47,7 +47,9 @@ const Header = () => {
 
   const handleLogout = async () => {
     try {
-      await api.post("/auth/logout");
+      await api.post("/auth/logout", {
+        withCredentials: true,
+      });
       dispatch(setUser(null));
       dispatch(setCart([]));
 
@@ -177,7 +179,7 @@ const Header = () => {
                 />
 
                 {open && (
-                  <div className="absolute right-0 top-full mt-2 z-[9999] w-32 bg-white dark:bg-slate-900 dark:border dark:border-slate-700 shadow-lg rounded-lg p-2 pointer-events-auto">
+                  <div className="absolute right-0 mt-2 w-32 bg-white dark:bg-slate-900 dark:border dark:border-slate-700  shadow-lg rounded-lg p-2">
                     <li
                       onClick={handleLogout}
                       className="w-full text-left px-3 py-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded style-none list-none cursor-pointer"
@@ -266,7 +268,7 @@ const Header = () => {
               {item.name}
             </Link>
           ))}
-          <div className="px-6 py-5 border-t dark:border-slate-700 border-[#E5E7EB]">
+          <div className="px-6 py-5 border-t dark:border-slate-700 border-gray-300">
             <li
               onClick={() => dispatch(setTheme())}
               className="w-full flex items-center justify-center gap-2 py-3 rounded-lg border border-[#E5E7EB] bg-gray-100 hover:bg-gray-200 transition dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700 cursor-pointer"
