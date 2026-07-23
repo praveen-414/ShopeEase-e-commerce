@@ -39,7 +39,7 @@ const ShippingInfo = () => {
   ];
 
   return (
-    <section className="bg-[#F8FAFC] dark:bg-slate-900 py-16 mt-20">
+    <section className="bg-[#F8FAFC] dark:bg-slate-900 py-16 mt-30">
       <div className="max-w-6xl mx-auto px-5">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto">

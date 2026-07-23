@@ -19,7 +19,7 @@ min-h-[650px] lg:min-h-[605px]">
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <span className="inline-block bg-blue-600 text-white px-4 py-2 md:px-5 rounded-full text-xs sm:text-sm font-medium">
-              🔥 Summer Sale 2026
+              🔥 Winter Sale 2026
             </span>
 
             <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight dark:text-slate-50">
