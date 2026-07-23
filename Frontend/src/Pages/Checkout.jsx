@@ -1,6 +1,7 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import { useState } from "react";
+import api from "../config/axios";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { setShippingAddress } from "../redux/slices/checkOutSlice";
@@ -14,7 +15,6 @@ const Checkout = () => {
   const [state, setState] = useState("");
   const [pincode, setPincode] = useState("");
   const [country, setCountry] = useState("");
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -78,18 +78,16 @@ const Checkout = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-28 sm:mt-24 lg:mt-28 pb-10">
-      <h1 className="text-3xl sm:text-4xl font-bold mb-6 dark:text-slate-50 sm:mt-15">
-        Shipping Address
-      </h1>
+    <div className="max-w-5xl mx-auto px-4 py-10 mt-25">
+      <h1 className="text-3xl font-bold mb-6 mt-10">Shipping Address</h1>
 
-      <div className="bg-white dark:bg-slate-800 shadow-lg rounded-2xl p-5 sm:p-6 md:p-8 space-y-5">
+      <div className="bg-white shadow rounded-xl p-6 space-y-5">
         <input
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           type="text"
           placeholder="Full Name"
-          className="w-full rounded-lg border p-3 text-sm sm:text-base outline-none focus:border-indigo-600 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:border-indigo-400"
+          className="w-full border rounded-lg p-3 outline-none focus:border-indigo-600"
         />
 
         <input
@@ -97,7 +95,7 @@ const Checkout = () => {
           onChange={(e) => setPhone(e.target.value)}
           type="text"
           placeholder="Phone Number"
-          className="w-full rounded-lg border p-3 text-sm sm:text-base outline-none focus:border-indigo-600 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:border-indigo-400"
+          className="w-full border rounded-lg p-3 outline-none focus:border-indigo-600"
         />
 
         <input
@@ -105,24 +103,24 @@ const Checkout = () => {
           onChange={(e) => setEmail(e.target.value)}
           type="email"
           placeholder="Email Address"
-          className="w-full rounded-lg border p-3 text-sm sm:text-base outline-none focus:border-indigo-600 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:border-indigo-400"
+          className="w-full border rounded-lg p-3 outline-none focus:border-indigo-600"
         />
 
         <textarea
           value={streetAddress}
           onChange={(e) => setStreetAddress(e.target.value)}
           placeholder="Street Address"
-          rows={4}
-          className="w-full resize-none rounded-lg border p-3 text-sm sm:text-base outline-none focus:border-indigo-600 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:border-indigo-400"
-        />
+          rows="4"
+          className="w-full border rounded-lg p-3 outline-none focus:border-indigo-600"
+        ></textarea>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-4">
           <input
             value={city}
             onChange={(e) => setCity(e.target.value)}
             type="text"
             placeholder="City"
-            className="w-full rounded-lg border p-3 text-sm sm:text-base outline-none focus:border-indigo-600 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:border-indigo-400"
+            className="border rounded-lg p-3 outline-none focus:border-indigo-600"
           />
 
           <input
@@ -130,7 +128,7 @@ const Checkout = () => {
             onChange={(e) => setState(e.target.value)}
             type="text"
             placeholder="State"
-            className="w-full rounded-lg border p-3 text-sm sm:text-base outline-none focus:border-indigo-600 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:border-indigo-400"
+            className="border rounded-lg p-3 outline-none focus:border-indigo-600"
           />
 
           <input
@@ -138,7 +136,7 @@ const Checkout = () => {
             onChange={(e) => setPincode(e.target.value)}
             type="text"
             placeholder="Pincode"
-            className="w-full rounded-lg border p-3 text-sm sm:text-base outline-none focus:border-indigo-600 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:border-indigo-400"
+            className="border rounded-lg p-3 outline-none focus:border-indigo-600"
           />
 
           <input
@@ -146,13 +144,13 @@ const Checkout = () => {
             onChange={(e) => setCountry(e.target.value)}
             type="text"
             placeholder="Country"
-            className="w-full rounded-lg border p-3 text-sm sm:text-base outline-none focus:border-indigo-600 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:border-indigo-400"
+            className="border rounded-lg p-3 outline-none focus:border-indigo-600"
           />
         </div>
 
         <Button
           text="Continue to Payment"
-          className="w-full py-3 text-sm sm:text-base"
+          className="w-full"
           onclick={() => {
             if (!validateForm()) return;
 
@@ -166,7 +164,7 @@ const Checkout = () => {
                 state,
                 pincode,
                 country,
-              })
+              }),
             );
 
             navigate("/payment");
