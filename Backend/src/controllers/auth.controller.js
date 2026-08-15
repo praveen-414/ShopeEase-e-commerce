@@ -182,30 +182,33 @@ const getRefreshTokens = async (req, res) => {
   const { refreshToken } = req.cookies;
   try {
     if (!refreshToken) {
-      return res.status(400).json({
-        success: false,
-        message: "Refresh token not found...",
-      });
+      return res
+        .status(400)
+        .json({ success: false, message: "Refresh token not found..." });
     }
     const decoded = jwt.verify(refreshToken, process.env.JWT_REFRESHTOKEN_KEY);
+
+    const user = await userModel.findOne({ _id: decoded.id, refreshToken });
+    if (!user) {
+      return res
+        .status(401)
+        .json({
+          success: false,
+          message: "Refresh token revoked, please login again",
+        });
+    }
+
     const accessToken = jwt.sign(
       { id: decoded.id },
       process.env.JWT_ACCESSTOKEN_KEY,
-      {
-        expiresIn: "15m",
-      },
+      { expiresIn: "15m" },
     );
-
-    res.status(200).json({
-      message: "Access token refresh successfully...",
-      accessToken,
-    });
+    res.status(200).json({ accessToken });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({
-      success: false,
-      message: "Internal Server Error",
-    });
+    return res
+      .status(500)
+      .json({ success: false, message: "Internal Server Error" });
   }
 };
 
