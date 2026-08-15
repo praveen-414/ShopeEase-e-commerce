@@ -60,7 +60,10 @@ const Header = () => {
       toast.success("Logged out successfully");
       navigate("/login");
     } catch (error) {
-      console.log("Logout error:", error.response?.data || error.message);
+      console.log("STATUS:", error.response?.status);
+      console.log("DATA:", error.response?.data);
+      console.log("MESSAGE:", error.response?.data?.message);
+      console.log("FULL ERROR:", error);
     }
   };
   return (
