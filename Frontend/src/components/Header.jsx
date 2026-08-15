@@ -44,22 +44,25 @@ const Header = () => {
     { name: "Contact", path: "/contact" },
     { name: "My Orders", path: "/my-orders" },
   ];
-
   const handleLogout = async () => {
     try {
-      await api.post("/auth/logout", {
-        withCredentials: true,
-      });
+      await api.post(
+        "/auth/logout",
+        {},
+        {
+          withCredentials: true,
+        },
+      );
+
       dispatch(setUser(null));
       dispatch(setCart([]));
 
       toast.success("Logged out successfully");
       navigate("/login");
     } catch (error) {
-      console.log(error);
+      console.log("Logout error:", error.response?.data || error.message);
     }
   };
-
   return (
     <>
       <header className="fixed top-0 left-0 w-full bg-white border-b border-[#E5E7EB] z-50 dark:bg-[#0F172A] dark:text-slate-50 dark:border-slate-700">
