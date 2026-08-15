@@ -46,13 +46,7 @@ const Header = () => {
   ];
   const handleLogout = async () => {
     try {
-      await api.get(
-        "/auth/logout",
-        {},
-        {
-          withCredentials: true,
-        },
-      );
+      await api.get("/auth/logout");
     } catch (error) {
       console.log("Logout error:", error.response?.data || error.message);
     } finally {
