@@ -79,17 +79,17 @@ const Checkout = () => {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 mt-24 sm:mt-24 lg:mt-25">
-      <h1 className="text-2xl sm:text-3xl font-bold mb-6 mt-8 sm:mt-10">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6 mt-8 sm:mt-10 text-[#111827] dark:text-slate-50">
         Shipping Address
       </h1>
 
-      <div className="bg-white shadow rounded-xl p-4 sm:p-6 space-y-5">
+      <div className="bg-white shadow rounded-xl p-4 sm:p-6 space-y-5 dark:bg-slate-800 dark:border dark:border-slate-700">
         <input
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           type="text"
           placeholder="Full Name"
-          className="w-full border rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600"
+          className="w-full border border-[#E5E7EB] rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600 bg-white text-[#111827] placeholder:text-gray-400 dark:bg-slate-700 dark:border-slate-600 dark:text-slate-50 dark:placeholder:text-slate-400 dark:focus:border-indigo-400"
         />
 
         <input
@@ -97,7 +97,7 @@ const Checkout = () => {
           onChange={(e) => setPhone(e.target.value)}
           type="text"
           placeholder="Phone Number"
-          className="w-full border rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600"
+          className="w-full border border-[#E5E7EB] rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600 bg-white text-[#111827] placeholder:text-gray-400 dark:bg-slate-700 dark:border-slate-600 dark:text-slate-50 dark:placeholder:text-slate-400 dark:focus:border-indigo-400"
         />
 
         <input
@@ -105,7 +105,7 @@ const Checkout = () => {
           onChange={(e) => setEmail(e.target.value)}
           type="email"
           placeholder="Email Address"
-          className="w-full border rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600"
+          className="w-full border border-[#E5E7EB] rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600 bg-white text-[#111827] placeholder:text-gray-400 dark:bg-slate-700 dark:border-slate-600 dark:text-slate-50 dark:placeholder:text-slate-400 dark:focus:border-indigo-400"
         />
 
         <textarea
@@ -113,7 +113,7 @@ const Checkout = () => {
           onChange={(e) => setStreetAddress(e.target.value)}
           placeholder="Street Address"
           rows="4"
-          className="w-full border rounded-lg p-3 text-sm sm:text-base outline-none resize-none focus:border-indigo-600"
+          className="w-full border border-[#E5E7EB] rounded-lg p-3 text-sm sm:text-base outline-none resize-none focus:border-indigo-600 bg-white text-[#111827] placeholder:text-gray-400 dark:bg-slate-700 dark:border-slate-600 dark:text-slate-50 dark:placeholder:text-slate-400 dark:focus:border-indigo-400"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -122,7 +122,7 @@ const Checkout = () => {
             onChange={(e) => setCity(e.target.value)}
             type="text"
             placeholder="City"
-            className="border rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600"
+            className="border border-[#E5E7EB] rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600 bg-white text-[#111827] placeholder:text-gray-400 dark:bg-slate-700 dark:border-slate-600 dark:text-slate-50 dark:placeholder:text-slate-400 dark:focus:border-indigo-400"
           />
 
           <input
@@ -130,7 +130,7 @@ const Checkout = () => {
             onChange={(e) => setState(e.target.value)}
             type="text"
             placeholder="State"
-            className="border rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600"
+            className="border border-[#E5E7EB] rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600 bg-white text-[#111827] placeholder:text-gray-400 dark:bg-slate-700 dark:border-slate-600 dark:text-slate-50 dark:placeholder:text-slate-400 dark:focus:border-indigo-400"
           />
 
           <input
@@ -138,7 +138,7 @@ const Checkout = () => {
             onChange={(e) => setPincode(e.target.value)}
             type="text"
             placeholder="Pincode"
-            className="border rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600"
+            className="border border-[#E5E7EB] rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600 bg-white text-[#111827] placeholder:text-gray-400 dark:bg-slate-700 dark:border-slate-600 dark:text-slate-50 dark:placeholder:text-slate-400 dark:focus:border-indigo-400"
           />
 
           <input
@@ -146,7 +146,7 @@ const Checkout = () => {
             onChange={(e) => setCountry(e.target.value)}
             type="text"
             placeholder="Country"
-            className="border rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600"
+            className="border border-[#E5E7EB] rounded-lg p-3 text-sm sm:text-base outline-none focus:border-indigo-600 bg-white text-[#111827] placeholder:text-gray-400 dark:bg-slate-700 dark:border-slate-600 dark:text-slate-50 dark:placeholder:text-slate-400 dark:focus:border-indigo-400"
           />
         </div>
 
