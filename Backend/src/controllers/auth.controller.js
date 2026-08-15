@@ -112,7 +112,7 @@ const login = async (req, res) => {
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
       secure: true,
-      sameSite:"None",
+      sameSite: "None",
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -136,6 +136,7 @@ const login = async (req, res) => {
 
 const logout = async (req, res) => {
   const { refreshToken } = req.cookies;
+
   try {
     if (!refreshToken) {
       return res.status(400).json({
@@ -143,17 +144,30 @@ const logout = async (req, res) => {
         message: "Refresh token not found...",
       });
     }
+
     const user = await userModel.findOne({ refreshToken });
+
     if (!user) {
       return res.status(404).json({
         success: false,
         message: "Refresh token not found...",
       });
     }
+
+    // Remove refresh token from database
     user.refreshToken = null;
     await user.save();
-    res.clearCookie("refreshToken");
-    res.status(200).json({
+
+    // Clear the same cookie that was created during login
+    res.clearCookie("refreshToken", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
+    });
+
+    return res.status(200).json({
+      success: true,
       message: "User logged out successfully...",
     });
   } catch (error) {
@@ -165,7 +179,6 @@ const logout = async (req, res) => {
     });
   }
 };
-
 const getRefreshTokens = async (req, res) => {
   const { refreshToken } = req.cookies;
   try {
