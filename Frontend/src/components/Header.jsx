@@ -46,7 +46,7 @@ const Header = () => {
   ];
   const handleLogout = async () => {
     try {
-      await api.post(
+      await api.get(
         "/auth/logout",
         {},
         {
