@@ -4,10 +4,12 @@ import Button from "./Button";
 const Hero = () => {
   return (
     <section className="w-full max-w-[90%] mx-auto mt-28 md:mt-36 lg:mt-40 ">
-     <div className="relative overflow-hidden rounded-3xl
+      <div
+        className="relative overflow-hidden rounded-3xl
 bg-gradient-to-r from-blue-50 via-white to-indigo-50
 dark:bg-slate-900 dark:bg-none
-min-h-[650px] lg:min-h-[605px]">
+min-h-[650px] lg:min-h-[605px]"
+      >
         {/* Decorative Circles */}
         <div className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-blue-100 dark:bg-slate-700 opacity-40"></div>
 
