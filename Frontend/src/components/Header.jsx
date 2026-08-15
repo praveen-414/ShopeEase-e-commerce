@@ -46,25 +46,22 @@ const Header = () => {
   ];
   const handleLogout = async () => {
     try {
-      const res = await api.post(
+      await api.post(
         "/auth/logout",
         {},
         {
           withCredentials: true,
         },
       );
-
-      console.log("Logout response:", res.data);
-
+    } catch (error) {
+      console.log("Logout error:", error.response?.data || error.message);
+    } finally {
       dispatch(setUser(null));
       dispatch(setCart([]));
       setOpen(false);
 
       toast.success("Logged out successfully");
-
       navigate("/login", { replace: true });
-    } catch (error) {
-      console.log("Logout error:", error.response?.data || error.message);
     }
   };
   return (
